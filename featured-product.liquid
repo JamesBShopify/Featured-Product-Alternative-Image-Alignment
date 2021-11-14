@@ -1,0 +1,44 @@
+{% comment %}All code to be added to featured-product.liquid {% endcomment %}
+
+{% comment %}
+Locate the following schema
+{
+  "type": "checkbox",
+  "id": "show_quantity_selector",
+  "label": {
+    "cs": "Zobrazit výběr množství",
+    "da": "Vis antalsvælger",
+    "de": "Mengenauswahl anzeigen",
+    "en": "Show quantity selector",
+    "es": "Mostrar selector de cantidad",
+And above this, add the code from lines 17 to 36
+{% endcomment %}
+
+{
+  "type": "select",
+  "id": "image_align",
+  "label": "Image Alignment",
+  "default": "left",
+  "options": [
+    {
+      "label": {
+        "en": "Left"
+	},	
+      "value": "left"
+    },
+    { 
+      "label": {
+        "en": "Right"
+         },
+      "value": "right"
+    }
+  ]
+},
+
+{% comment %}
+Locate this code 
+<div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
+And replace it with the code on line 44
+{% endcomment %}
+
+<div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %} {% if section.settings.image_align == 'right' %}float-right{% endif %}" data-product-single-media-group>
