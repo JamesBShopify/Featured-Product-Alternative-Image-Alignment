@@ -1,0 +1,9 @@
+/* All changes done to theme.css and are to be added at the bottom of the file after all other code */ 
+
+.float-right {
+  float: right; 
+  }
+  
+ .float-left {
+  float: left; 
+  }
